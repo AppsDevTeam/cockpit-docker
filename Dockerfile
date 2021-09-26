@@ -29,8 +29,7 @@ RUN wget https://github.com/agentejo/cockpit/archive/${COCKPIT_VERSION}.zip -O /
     && unzip /tmp/cockpit.zip -d /tmp/ \
     && rm /tmp/cockpit.zip \
     && mv /tmp/cockpit-${COCKPIT_VERSION} /var/www/cockpit \
-    && cd /var/www/html \
-    && git clone https://github.com/raffaelj/cockpit_ImageResize.git addons/ImageResize
+    && git clone https://github.com/raffaelj/cockpit_ImageResize.git /var/www/cockpit/addons/ImageResize
 
 # COCKPIT HACK TO HAVE FILES WITH 770/660 PERMISSIONS
 COPY src/lib/vendor/league/flysystem/src/Adapter/Local.php /var/www/cockpit/lib/vendor/league/flysystem/src/Adapter/Local.php
